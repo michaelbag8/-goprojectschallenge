@@ -9,11 +9,7 @@ import (
 
 // countChars count characters, space and words
 func countChars(word string) int{
-	count := 0
-	for i:=0; i <len(word); i++{
-		count++
-	}
-	return count
+	return len([]rune(word))
 }
 
 //countLines count lines
@@ -39,6 +35,11 @@ func main() {
 		fmt.Println("Error reading the input", input)
 		return
 	}
+	
+	if strings.TrimSpace(input) == "" {
+    fmt.Println("★ Words: 0 | Chars: 0 | Lines: 0")
+    return
+}
 
 
 	fmt.Printf("★ Words: %d | Chars: %d | Lines: %d\n",
