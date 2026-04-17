@@ -18,7 +18,7 @@ func countChars(word string) int{
 
 //countLines count lines
 func countLines(word string)int{
-	word = strings.TrimRight(word, "\n)
+	word = strings.TrimRight(word, "\n")
 	words := strings.Split(word, "\n")
 	return  len(words)
 	
