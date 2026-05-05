@@ -42,13 +42,17 @@ func encode(input string, textToMorse map[string]string) string {
 
 	for _, char := range input {
 		letter := string(char)
-		if code, exist := textToMorse[letter]; exist {
+		if char == ' '{
+			result.WriteString("/")
+			
+		} else if code, exist := textToMorse[letter]; exist {
 			result.WriteString(code)
 			result.WriteString(" ")
+		}else{
+			result.WriteString("? ")
 		}
 
 	}
 	return result.String()
 
 }
-
