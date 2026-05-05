@@ -5,9 +5,13 @@ import (
 	"os"
 	"strings"
 )
-
 func main() {
 	if len(os.Args) > 3{
+		fmt.Println("Usage: code encode/decode")
+		return
+	}
+	
+	if len(os.Args) < 3{
 		fmt.Println("Usage: code encode/decode")
 		return
 	}
