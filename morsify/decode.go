@@ -24,9 +24,13 @@ func decode(input string, morseToText map[string]string) string {
 	var result strings.Builder
 
 	for _, char := range codes {
-		if letter, exist := reversedMap[char]; exist {
+		if char == "/"{
+			result.WriteString(" ")
+		}else if letter, exist := reversedMap[char]; exist {
 			result.WriteString(letter)
 			
+		}else{
+			result.WriteString("?")
 		}
 
 	}
